@@ -17,6 +17,7 @@ def calculate_expected_data_transfer(data_size, period, random_time):
     return data_size * (random_time // period)
 
 def main():
+    args = sys.argv[1:]
     if len(args) != 2:
         print("Необходимо указать два аргумента: период и количество данных")
         return
@@ -27,8 +28,6 @@ def main():
     period_main = get_random_time(2, 10, 2)
     main_process = subprocess.Popen(['python3', 'main.py', str(period_main), 'test.csv'])
     time.sleep(period_main)
-
-    args = sys.argv[1:]
 
     period = int(args[0])
     data_size = int(args[1])
