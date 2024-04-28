@@ -6,6 +6,7 @@
 
 ```bash
 git clone https://github.com/Eldar-Z/tcplogger
+cd tcplogger
 ```
 
 ## Использование
@@ -25,10 +26,14 @@ make test
 python3 main.py
 
 запуск программы со своими аргументами--
-python3 main.py <период> <название_файла.csv>
+python3 main.py <период_в_секундах> <название_файла.csv>
+Пример:
+python3 main.py 10 logs.csv
 
 запуск тестирования--
 python3 test.py <период> <количество_отправляемых_байт>
+Пример:
+python3 test.py 2 5
 ```
 
 В файле config.txt можно задать период и путь к выходному файлу
