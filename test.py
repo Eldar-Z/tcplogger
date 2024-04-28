@@ -17,6 +17,10 @@ def calculate_expected_data_transfer(data_size, period, random_time):
     return data_size * (random_time // period)
 
 def main():
+    if len(args) != 2:
+        print("Необходимо указать два аргумента: период и количество данных")
+        return
+        
     set_ip = subprocess.Popen(['python3', 'check_ip.py'])
     set_ip.wait()
     
@@ -25,10 +29,6 @@ def main():
     time.sleep(period_main)
 
     args = sys.argv[1:]
-
-    if len(args) != 2:
-        print("Необходимо указать два аргумента: период и количество данных")
-        return
 
     period = int(args[0])
     data_size = int(args[1])
