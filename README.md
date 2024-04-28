@@ -16,7 +16,19 @@ git clone https://github.com/Eldar-Z/tcplogger
 make run
 
 запуск тестирования--
-make run
+make test
+```
+
+Без использования make:
+```bash
+запуск программы (аргументы берутся из файла config.txt)--
+python3 main.py
+
+запуск программы со своими аргументами--
+python3 main.py <период> <название_файла.csv>
+
+запуск тестирования--
+python3 test.py <период> <количество_отправляемых_байт>
 ```
 
 ## Contributing
