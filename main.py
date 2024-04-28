@@ -77,19 +77,20 @@ def main():
     prev_sent = max_sent
 
     while True:
+        connection_count_before = read_tcp_connections()
+        
         time.sleep(period)
 
         current_timestamp = time.time()
-
         received = max_received
         sent = max_sent
+        connection_count_after = read_tcp_connections()
 
-        connection_count = read_tcp_connections()
         data.append([
             int(current_timestamp),
             received - prev_received,
             sent - prev_sent,
-            connection_count - 1
+            max(connection_count_before,connection_count_after)  - 1
         ])
         
         write_to_file(data, output_file)
