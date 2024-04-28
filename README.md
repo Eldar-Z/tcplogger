@@ -31,9 +31,6 @@ python3 main.py <период> <название_файла.csv>
 python3 test.py <период> <количество_отправляемых_байт>
 ```
 
-## Contributing
+В файле config.txt можно задать период и путь к выходному файлу
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
+## 
